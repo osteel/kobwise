@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+
+  phpsecuritychecker:
+    name: PHP Security Checker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Analyze dependencies
+        uses: symfonycorp/security-checker-action@v2
+
+  phpcs:
+    name: PHP_CodeSniffer
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Check coding style
+        uses: chekalsky/phpcs-action@v1
+
+  phpunit:
+    name: PHPUnit
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version:
+          - "7.4"
+          - "8.0"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+
+      - name: Install composer dependencies
+        uses: "ramsey/composer-install@v1"
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit
