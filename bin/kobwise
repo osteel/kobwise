@@ -1,7 +1,13 @@
 #!/usr/bin/env php
 <?php
 
-require __DIR__.'/../vendor/autoload.php';
+$root = dirname(__DIR__);
+
+if (! is_file($root . '/vendor/autoload.php')) {
+    $root = dirname(__DIR__, 4);
+}
+
+require $root . '/vendor/autoload.php';
 
 use Osteel\Kobwise\Commands\Convert;
 use Symfony\Component\Console\Application;
