@@ -14,7 +14,7 @@ class Interpreter extends SymfonyStyle
      * @param  callable|null $validator
      * @return string
      */
-    public function ask(string $question, ?string $default = null, ?callable $validator = null)
+    public function ask(string $question, string $default = null, callable $validator = null)
     {
         return parent::ask(sprintf(' ✍️  %s', $question), $default, $validator);
     }
