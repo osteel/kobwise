@@ -48,6 +48,8 @@
         "check-style": "phpcs src tests",
         "fix-style": "phpcbf src tests"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "bin": [
         "bin/kobwise"
     ]
