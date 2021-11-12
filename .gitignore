@@ -1,6 +1,7 @@
 **/.DS_Store
 build
 vendor
+composer.lock
 phpcs.xml
 phpunit.xml
 .phpunit.result.cache

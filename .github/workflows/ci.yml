@@ -8,17 +8,6 @@ on:
 
 jobs:
 
-  phpsecuritychecker:
-    name: PHP Security Checker
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Analyze dependencies
-        uses: symfonycorp/security-checker-action@v2
-
   phpcs:
     name: PHP_CodeSniffer
     runs-on: ubuntu-latest
