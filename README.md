@@ -1,10 +1,15 @@
-# kobwise
+<h1 align="center">kobwise</h1>
 
-[![Build Status](https://github.com/osteel/kobwise/workflows/CI/badge.svg)](https://github.com/osteel/kobwise/actions)
-[![Latest Stable Version](https://poser.pugx.org/osteel/kobwise/v)](//packagist.org/packages/osteel/kobwise)
-[![License](https://poser.pugx.org/osteel/kobwise/license)](//packagist.org/packages/osteel/kobwise)
+<p align="center">Convert your Kobo annotations to Readwise highlights</p>
 
-Convert your Kobo annotations to Readwise highlights.
+<p align="center">
+    <img height="300" alt="Preview" src="/art/preview.png">
+	<p align="center">
+		<a href="https://github.com/osteel/kobwise/actions"><img alt="Build Status" src="https://github.com/osteel/kobwise/workflows/CI/badge.svg"></a>
+		<a href="//packagist.org/packages/osteel/kobwise"><img alt="Latest Stable Version" src="https://poser.pugx.org/osteel/kobwise/v"></a>
+		<a href="//packagist.org/packages/osteel/kobwise"><img alt="License" src="https://poser.pugx.org/osteel/kobwise/license"></a>
+	</p>
+</p>
 
 ## Why?
 
