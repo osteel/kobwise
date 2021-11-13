@@ -3,7 +3,7 @@
 <p align="center">Convert your Kobo annotations to Readwise highlights</p>
 
 <p align="center">
-    <img height="600" alt="Preview" src="/art/preview.png">
+    <img height="400" alt="Preview" src="/art/preview.png">
 	<p align="center">
 		<a href="https://github.com/osteel/kobwise/actions"><img alt="Build Status" src="https://github.com/osteel/kobwise/workflows/CI/badge.svg"></a>
 		<a href="//packagist.org/packages/osteel/kobwise"><img alt="Latest Stable Version" src="https://poser.pugx.org/osteel/kobwise/v"></a>
