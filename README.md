@@ -13,13 +13,13 @@
 
 ## Why?
 
-[Readwise](https://readwise.io) is an application allowing you to save highlights from books, articles, or any source of content you find inspiring and/or worth remembering. It will then resurface these highlights at a frequency of your choosing.
+[Readwise](https://readwise.io) is an application allowing you to import highlights from books, articles, or any source of content you find inspiring and/or worth remembering. It will then resurface these highlights at a frequency of your choosing.
 
 Readwise integrates with various services and platforms to ease the process of importing highlights, but unfortunately it is [not compatible with Kobo](https://help.readwise.io/article/82-does-readwise-support-kobo-highlights).
 
-This small command-line application offers a bridge between the two, converting your Kobo annotations to a `.csv` file that is [compatible with Readwise](https://readwise.io/import_bulk).
+kobwise is a small command-line application offering a bridge between the two, converting your Kobo annotations to a `.csv` file that is [compatible with Readwise](https://readwise.io/import_bulk).
 
-## Install
+## Instal
 
 kobwise is written in PHP and is installed using [Composer](https://getcomposer.org):
 
@@ -38,6 +38,26 @@ kobwise convert "The Almanack of Naval Ravikant.txt"
 ```
 
 It will create a new `.csv` file in the current folder, which you can then [upload to Readwise](https://readwise.io/import_bulk).
+
+A help menu is also available upon running `kobwise` with no arguments:
+
+```
+kobwise
+```
+
+## Update and delete
+
+Update kobwise:
+
+```
+composer global update osteel/kobwise
+```
+
+Delete kobwise:
+
+```
+composer global remove osteel/kobwise
+```
 
 ## Known limitations
 
