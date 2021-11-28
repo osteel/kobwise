@@ -3,7 +3,7 @@
 <p align="center">Convert your Kobo annotations to Readwise highlights</p>
 
 <p align="center">
-    <img height="400" alt="Preview" src="/art/preview.png">
+    <img alt="Preview" src="/art/preview.png">
 	<p align="center">
 		<a href="https://github.com/osteel/kobwise/actions"><img alt="Build Status" src="https://github.com/osteel/kobwise/workflows/CI/badge.svg"></a>
 		<a href="//packagist.org/packages/osteel/kobwise"><img alt="Latest Stable Version" src="https://poser.pugx.org/osteel/kobwise/v"></a>
@@ -63,7 +63,7 @@ composer global remove osteel/kobwise
 
 Kobo's annotation files are formatted in such a way that it is not easy to distinguish separate annotations from different paragraphs belonging to the same annotation.
 
-It is therefore recommended to skim through the annotation file beforehand, and to delete any line break between paragraphs that should belong together.
+It is therefore recommended to skim through the annotation file beforehand, and to delete any empty lines between paragraphs that should belong together.
 
 As Readwise doesn't allow its users to [permanently delete highlights](https://help.readwise.io/article/123-why-cant-i-permanently-delete-highlights), it is also recommended to review the `.csv` file before import.
 
