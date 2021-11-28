@@ -48,7 +48,7 @@ class Converter
         // The file's first line should be the title.
         $constants = [$this->readLine($source), $data->getAuthor(), $data->getUrl()];
 
-        $this->addRow($source, $target, $constants);
+        $this->processHighlight($source, $target, $constants);
 
         $this->clerk->close($source);
         $this->clerk->close($target);
@@ -76,41 +76,36 @@ class Converter
     }
 
     /**
-     * Process the next line of the file.
+     * Parse and add the next highlight.
      *
-     * @param  string      $source
-     * @param  string      $target
-     * @param  array       $constants
-     * @param  string|null $current
-     * @param  string|null $next
+     * @param  string $source
+     * @param  string $target
+     * @param  array  $constants
      * @return void
      */
-    private function addRow(
-        string $source,
-        string $target,
-        array $constants,
-        ?string $current = null,
-        ?string $next = null
-    ): void {
-        $current = $next;
-
-        if (is_null($next = $this->readLine($source))) {
+    private function processHighlight(string $source, string $target, array $constants): void
+    {
+        if (is_null($highlight = $this->readLine($source))) {
             return;
         }
 
-        if (empty($current)) {
-            $this->addRow($source, $target, $constants, $current, $next);
+        if (empty($highlight)) {
+            $this->processHighlight($source, $target, $constants);
             return;
         }
 
-        $note = str_starts_with($next, 'Note: ') ? substr($next, 6) : null;
+        $note = null;
 
-        $this->clerk->writeCsv($target, array_merge([$current, $note], $constants));
-
-        if (! empty($note)) {
-            $next = $this->readLine($source);
+        while (! empty($line = $this->readLine($source))) {
+            if ($note !== null) {
+                $note .= sprintf("\n%s", $line);
+            } elseif (is_null($note = str_starts_with($line, 'Note: ') ? substr($line, 6) : null)) {
+                $highlight .= sprintf("\n%s", $line);
+            }
         }
 
-        $this->addRow($source, $target, $constants, $current, $next);
+        $this->clerk->writeCsv($target, array_merge([$highlight, $note], $constants));
+
+        $this->processHighlight($source, $target, $constants);
     }
 }
