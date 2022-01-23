@@ -27,7 +27,7 @@ kobwise is written in PHP and is installed using [Composer](https://getcomposer.
 composer global require osteel/kobwise
 ```
 
-Make sure the `~/.composer/vendor/bin` directory is in your system's "PATH".
+Make sure the `~/.composer/vendor/bin` directory [is in your system's `PATH`](https://blackdeerdev.com/how-to-add-composer-vendor-bin-directory-in-your-path/).
 
 ## Use
 
