@@ -9,14 +9,13 @@ class Interpreter extends SymfonyStyle
     /**
      * {@inheritdoc}
      *
-     * @param  string        $question
-     * @param  string|null   $default
-     * @param  callable|null $validator
+     * @param  string      $question
+     * @param  string|null $default
      * @return string
      */
-    public function ask(string $question, string $default = null, callable $validator = null)
+    public function question(string $question, string $default = null)
     {
-        return parent::ask(sprintf(' ✍️  %s', $question), $default, $validator);
+        return $this->ask(sprintf(' ✍️  %s', $question), $default);
     }
 
     /**
