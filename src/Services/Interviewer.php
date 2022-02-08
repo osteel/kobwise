@@ -35,10 +35,10 @@ class Interviewer
 
         $data->setFile($input->getArgument('file'));
 
-        $author = $this->interpreter->ask('Who is the author? (leave blank to skip)');
+        $author = $this->interpreter->question('Who is the author? (leave blank to skip)');
         $data->setAuthor($author);
 
-        $url = $this->interpreter->ask('Would you like to add a URL? (leave blank to skip)');
+        $url = $this->interpreter->question('Would you like to add a URL? (leave blank to skip)');
         $data->setUrl($url);
 
         return $data;
