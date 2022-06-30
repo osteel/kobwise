@@ -99,7 +99,7 @@ class Converter
         while (! empty($line = $this->readLine($source))) {
             if ($note !== null) {
                 $note .= sprintf("\n%s", $line);
-            } elseif (is_null($note = str_starts_with($line, 'Note: ') ? substr($line, 6) : null)) {
+            } elseif (is_null($note = strpos($line, 'Note: ') === 0 ? substr($line, 6) : null)) {
                 $highlight .= sprintf("\n%s", $line);
             }
         }
