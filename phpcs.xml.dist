@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="kobwise">
-    <description>The coding standard of kobwise</description>
+    <description>kobwise coding standard</description>
     <arg value="p" />
 
     <config name="ignore_warnings_on_exit" value="1" />
